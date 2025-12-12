@@ -1,0 +1,189 @@
+Vraie Classe,Prédite,Nombre,Taux
+Tomato___healthy,Tomato___Target_Spot,86,17.9%
+Tomato___Early_blight,Tomato___Late_blight,43,9.0%
+Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot,Corn_(maize)___Northern_Leaf_Blight,43,10.5%
+Tomato___Septoria_leaf_spot,Tomato___Target_Spot,37,8.5%
+Tomato___Tomato_mosaic_virus,Tomato___Leaf_Mold,32,7.1%
+Tomato___Target_Spot,Tomato___Spider_mites Two-spotted_spider_mite,30,6.6%
+Tomato___Early_blight,Tomato___Septoria_leaf_spot,24,5.0%
+Tomato___Early_blight,Tomato___Target_Spot,23,4.8%
+Tomato___Spider_mites Two-spotted_spider_mite,Tomato___Target_Spot,21,4.8%
+Apple___Apple_scab,Apple___healthy,16,3.2%
+Corn_(maize)___Northern_Leaf_Blight,Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot,16,3.4%
+Tomato___Bacterial_spot,Tomato___Septoria_leaf_spot,16,3.8%
+Tomato___Septoria_leaf_spot,Tomato___Leaf_Mold,16,3.7%
+Raspberry___healthy,Strawberry___healthy,14,3.1%
+Grape___Black_rot,Grape___Esca_(Black_Measles),14,3.0%
+Tomato___Late_blight,Tomato___Early_blight,13,2.8%
+"Pepper,_bell___Bacterial_spot","Pepper,_bell___healthy",13,2.7%
+Tomato___Tomato_Yellow_Leaf_Curl_Virus,Tomato___Spider_mites Two-spotted_spider_mite,13,2.7%
+Tomato___healthy,Tomato___Spider_mites Two-spotted_spider_mite,13,2.7%
+Tomato___Septoria_leaf_spot,Tomato___Late_blight,11,2.5%
+Soybean___healthy,"Pepper,_bell___healthy",10,2.0%
+Potato___healthy,Potato___Late_blight,9,2.0%
+Potato___healthy,"Pepper,_bell___healthy",9,2.0%
+Potato___Late_blight,Tomato___Late_blight,9,1.9%
+Grape___Esca_(Black_Measles),Grape___Black_rot,9,1.9%
+Tomato___Early_blight,Tomato___Leaf_Mold,8,1.7%
+Tomato___Early_blight,Tomato___Spider_mites Two-spotted_spider_mite,8,1.7%
+Tomato___Septoria_leaf_spot,Tomato___Early_blight,8,1.8%
+Tomato___Late_blight,Tomato___Leaf_Mold,7,1.5%
+Apple___Apple_scab,Apple___Black_rot,7,1.4%
+Tomato___Leaf_Mold,Tomato___Late_blight,6,1.3%
+Tomato___Leaf_Mold,Tomato___Spider_mites Two-spotted_spider_mite,6,1.3%
+Tomato___Septoria_leaf_spot,Tomato___Bacterial_spot,6,1.4%
+Tomato___Target_Spot,Tomato___Bacterial_spot,6,1.3%
+Tomato___Tomato_mosaic_virus,Tomato___Septoria_leaf_spot,6,1.3%
+Tomato___Early_blight,Tomato___Bacterial_spot,6,1.2%
+Tomato___Tomato_mosaic_virus,Tomato___Target_Spot,6,1.3%
+Tomato___Bacterial_spot,Tomato___Target_Spot,6,1.4%
+Tomato___Leaf_Mold,Tomato___Septoria_leaf_spot,5,1.1%
+Tomato___Septoria_leaf_spot,Tomato___Spider_mites Two-spotted_spider_mite,5,1.1%
+Tomato___Spider_mites Two-spotted_spider_mite,Tomato___Leaf_Mold,5,1.1%
+Peach___Bacterial_spot,Peach___healthy,5,1.1%
+Tomato___Bacterial_spot,Tomato___Late_blight,4,0.9%
+Grape___Leaf_blight_(Isariopsis_Leaf_Spot),Tomato___Septoria_leaf_spot,4,0.9%
+Raspberry___healthy,Tomato___healthy,4,0.9%
+Potato___Early_blight,Potato___Late_blight,4,0.8%
+Tomato___Bacterial_spot,Tomato___Spider_mites Two-spotted_spider_mite,4,0.9%
+Tomato___Late_blight,Tomato___Septoria_leaf_spot,4,0.9%
+Tomato___Target_Spot,Tomato___Septoria_leaf_spot,4,0.9%
+Tomato___Tomato_Yellow_Leaf_Curl_Virus,Tomato___Bacterial_spot,4,0.8%
+Tomato___Tomato_Yellow_Leaf_Curl_Virus,Tomato___Tomato_mosaic_virus,4,0.8%
+Tomato___Tomato_mosaic_virus,Tomato___Spider_mites Two-spotted_spider_mite,4,0.9%
+Apple___Apple_scab,Blueberry___healthy,4,0.8%
+Tomato___Early_blight,Potato___Early_blight,3,0.6%
+Tomato___Late_blight,Potato___Late_blight,3,0.6%
+Tomato___Bacterial_spot,"Pepper,_bell___Bacterial_spot",3,0.7%
+Tomato___Late_blight,Tomato___Target_Spot,3,0.6%
+Tomato___Leaf_Mold,Tomato___Tomato_mosaic_virus,3,0.6%
+Tomato___Target_Spot,Tomato___Leaf_Mold,3,0.7%
+Potato___Early_blight,Tomato___Septoria_leaf_spot,3,0.6%
+Tomato___Late_blight,Tomato___Spider_mites Two-spotted_spider_mite,3,0.6%
+Soybean___healthy,Potato___healthy,3,0.6%
+Apple___Cedar_apple_rust,Tomato___Septoria_leaf_spot,3,0.7%
+Tomato___Target_Spot,Tomato___healthy,2,0.4%
+Apple___healthy,Peach___healthy,2,0.4%
+Tomato___Septoria_leaf_spot,Strawberry___Leaf_scorch,2,0.5%
+Grape___healthy,Tomato___Target_Spot,2,0.5%
+Grape___Leaf_blight_(Isariopsis_Leaf_Spot),Tomato___Target_Spot,2,0.5%
+Tomato___Early_blight,Tomato___healthy,2,0.4%
+Grape___Leaf_blight_(Isariopsis_Leaf_Spot),Tomato___Bacterial_spot,2,0.5%
+Apple___Apple_scab,Apple___Cedar_apple_rust,2,0.4%
+Tomato___Tomato_Yellow_Leaf_Curl_Virus,Tomato___Leaf_Mold,2,0.4%
+Apple___Apple_scab,Tomato___Septoria_leaf_spot,2,0.4%
+Apple___Apple_scab,"Pepper,_bell___healthy",2,0.4%
+Tomato___Leaf_Mold,Tomato___Early_blight,2,0.4%
+Apple___healthy,Cherry_(including_sour)___healthy,2,0.4%
+Apple___Cedar_apple_rust,Peach___Bacterial_spot,2,0.5%
+Tomato___Early_blight,Potato___Late_blight,2,0.4%
+Tomato___Bacterial_spot,Tomato___Early_blight,2,0.5%
+Tomato___Spider_mites Two-spotted_spider_mite,Tomato___Septoria_leaf_spot,2,0.5%
+Corn_(maize)___healthy,Corn_(maize)___Northern_Leaf_Blight,2,0.4%
+Tomato___Spider_mites Two-spotted_spider_mite,Tomato___Late_blight,2,0.5%
+Tomato___Tomato_mosaic_virus,Tomato___Early_blight,2,0.4%
+Potato___Early_blight,Tomato___Early_blight,2,0.4%
+Potato___Late_blight,Potato___healthy,2,0.4%
+"Pepper,_bell___Bacterial_spot",Tomato___Early_blight,2,0.4%
+"Pepper,_bell___Bacterial_spot",Tomato___Septoria_leaf_spot,2,0.4%
+"Pepper,_bell___healthy",Apple___Black_rot,2,0.4%
+"Pepper,_bell___healthy",Peach___Bacterial_spot,2,0.4%
+Apple___Apple_scab,Cherry_(including_sour)___Powdery_mildew,2,0.4%
+"Pepper,_bell___healthy","Pepper,_bell___Bacterial_spot",2,0.4%
+Tomato___Late_blight,Tomato___healthy,2,0.4%
+Tomato___healthy,Tomato___Late_blight,2,0.4%
+Peach___Bacterial_spot,"Pepper,_bell___Bacterial_spot",2,0.4%
+Tomato___Spider_mites Two-spotted_spider_mite,Tomato___Bacterial_spot,2,0.5%
+Blueberry___healthy,Apple___Apple_scab,2,0.4%
+Potato___healthy,Blueberry___healthy,2,0.4%
+Cherry_(including_sour)___Powdery_mildew,Apple___Apple_scab,2,0.5%
+Potato___healthy,Soybean___healthy,2,0.4%
+Apple___healthy,Potato___Late_blight,1,0.2%
+Apple___healthy,Tomato___Septoria_leaf_spot,1,0.2%
+Tomato___Septoria_leaf_spot,Peach___Bacterial_spot,1,0.2%
+Apple___healthy,Tomato___Spider_mites Two-spotted_spider_mite,1,0.2%
+Apple___healthy,Apple___Black_rot,1,0.2%
+Tomato___Septoria_leaf_spot,Tomato___Tomato_Yellow_Leaf_Curl_Virus,1,0.2%
+Apple___healthy,Soybean___healthy,1,0.2%
+Tomato___Septoria_leaf_spot,Tomato___Tomato_mosaic_virus,1,0.2%
+Apple___healthy,Tomato___Leaf_Mold,1,0.2%
+Tomato___Spider_mites Two-spotted_spider_mite,"Pepper,_bell___Bacterial_spot",1,0.2%
+Tomato___Septoria_leaf_spot,Potato___Early_blight,1,0.2%
+Tomato___Septoria_leaf_spot,Apple___Black_rot,1,0.2%
+"Pepper,_bell___Bacterial_spot",Blueberry___healthy,1,0.2%
+Apple___Cedar_apple_rust,Tomato___Late_blight,1,0.2%
+Apple___Apple_scab,Tomato___Bacterial_spot,1,0.2%
+Apple___Apple_scab,Grape___healthy,1,0.2%
+Tomato___healthy,Tomato___Leaf_Mold,1,0.2%
+Tomato___healthy,Potato___Late_blight,1,0.2%
+Tomato___healthy,Blueberry___healthy,1,0.2%
+Tomato___healthy,Apple___Cedar_apple_rust,1,0.2%
+Apple___Apple_scab,Peach___Bacterial_spot,1,0.2%
+Apple___Apple_scab,"Pepper,_bell___Bacterial_spot",1,0.2%
+Apple___Apple_scab,Potato___Late_blight,1,0.2%
+Tomato___Tomato_mosaic_virus,Tomato___Late_blight,1,0.2%
+Tomato___Tomato_Yellow_Leaf_Curl_Virus,Tomato___Target_Spot,1,0.2%
+Apple___Cedar_apple_rust,"Pepper,_bell___healthy",1,0.2%
+Apple___Apple_scab,Tomato___Late_blight,1,0.2%
+Tomato___Tomato_Yellow_Leaf_Curl_Virus,Tomato___Septoria_leaf_spot,1,0.2%
+Tomato___Tomato_Yellow_Leaf_Curl_Virus,Tomato___Late_blight,1,0.2%
+Apple___Black_rot,"Pepper,_bell___healthy",1,0.2%
+Apple___Cedar_apple_rust,Apple___Apple_scab,1,0.2%
+Apple___Cedar_apple_rust,Apple___healthy,1,0.2%
+Tomato___Target_Spot,Tomato___Late_blight,1,0.2%
+Tomato___Target_Spot,Apple___Black_rot,1,0.2%
+Tomato___Spider_mites Two-spotted_spider_mite,Tomato___Tomato_mosaic_virus,1,0.2%
+Apple___healthy,Tomato___Target_Spot,1,0.2%
+Tomato___Late_blight,"Pepper,_bell___Bacterial_spot",1,0.2%
+Tomato___Leaf_Mold,Tomato___Bacterial_spot,1,0.2%
+Tomato___Leaf_Mold,Orange___Haunglongbing_(Citrus_greening),1,0.2%
+Strawberry___Leaf_scorch,Potato___Early_blight,1,0.2%
+Squash___Powdery_mildew,Tomato___Late_blight,1,0.2%
+Squash___Powdery_mildew,Grape___healthy,1,0.2%
+Soybean___healthy,Tomato___Target_Spot,1,0.2%
+Soybean___healthy,Tomato___Spider_mites Two-spotted_spider_mite,1,0.2%
+Soybean___healthy,Tomato___Septoria_leaf_spot,1,0.2%
+Soybean___healthy,Potato___Late_blight,1,0.2%
+Soybean___healthy,Orange___Haunglongbing_(Citrus_greening),1,0.2%
+Raspberry___healthy,Tomato___Late_blight,1,0.2%
+Raspberry___healthy,Potato___healthy,1,0.2%
+Raspberry___healthy,"Pepper,_bell___healthy",1,0.2%
+Raspberry___healthy,Blueberry___healthy,1,0.2%
+Raspberry___healthy,Apple___Apple_scab,1,0.2%
+Potato___healthy,Tomato___Spider_mites Two-spotted_spider_mite,1,0.2%
+Potato___healthy,Tomato___Bacterial_spot,1,0.2%
+Peach___Bacterial_spot,Apple___Black_rot,1,0.2%
+Peach___Bacterial_spot,Apple___Cedar_apple_rust,1,0.2%
+Peach___Bacterial_spot,Apple___healthy,1,0.2%
+Potato___Late_blight,Tomato___Early_blight,1,0.2%
+Potato___Early_blight,Tomato___Late_blight,1,0.2%
+Peach___healthy,Peach___Bacterial_spot,1,0.2%
+Potato___Early_blight,"Pepper,_bell___Bacterial_spot",1,0.2%
+"Pepper,_bell___healthy",Peach___healthy,1,0.2%
+Strawberry___Leaf_scorch,Tomato___Septoria_leaf_spot,1,0.2%
+Strawberry___healthy,Apple___Apple_scab,1,0.2%
+Strawberry___healthy,Blueberry___healthy,1,0.2%
+Cherry_(including_sour)___healthy,Strawberry___healthy,1,0.2%
+Tomato___Late_blight,Tomato___Tomato_Yellow_Leaf_Curl_Virus,1,0.2%
+Apple___healthy,Tomato___healthy,1,0.2%
+Blueberry___healthy,"Pepper,_bell___healthy",1,0.2%
+Cherry_(including_sour)___healthy,Apple___Black_rot,1,0.2%
+Cherry_(including_sour)___healthy,Blueberry___healthy,1,0.2%
+Peach___healthy,"Pepper,_bell___healthy",1,0.2%
+Tomato___Late_blight,Peach___healthy,1,0.2%
+Tomato___Late_blight,Blueberry___healthy,1,0.2%
+Tomato___Early_blight,Tomato___Tomato_Yellow_Leaf_Curl_Virus,1,0.2%
+Cherry_(including_sour)___healthy,"Pepper,_bell___healthy",1,0.2%
+Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot,Apple___Black_rot,1,0.2%
+Strawberry___healthy,Tomato___Target_Spot,1,0.2%
+Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot,Corn_(maize)___Common_rust_,1,0.2%
+Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot,Peach___healthy,1,0.2%
+Corn_(maize)___Common_rust_,Corn_(maize)___Northern_Leaf_Blight,1,0.2%
+Corn_(maize)___Northern_Leaf_Blight,Corn_(maize)___Common_rust_,1,0.2%
+Tomato___Early_blight,"Pepper,_bell___Bacterial_spot",1,0.2%
+Tomato___Bacterial_spot,Tomato___Tomato_Yellow_Leaf_Curl_Virus,1,0.2%
+Corn_(maize)___Northern_Leaf_Blight,Corn_(maize)___healthy,1,0.2%
+Corn_(maize)___healthy,Soybean___healthy,1,0.2%
+Grape___Leaf_blight_(Isariopsis_Leaf_Spot),Grape___healthy,1,0.2%
+Grape___Leaf_blight_(Isariopsis_Leaf_Spot),Potato___Late_blight,1,0.2%
+Tomato___healthy,Tomato___Tomato_Yellow_Leaf_Curl_Virus,1,0.2%

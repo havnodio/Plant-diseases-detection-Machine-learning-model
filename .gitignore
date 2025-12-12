@@ -1,0 +1,44 @@
+# Virtual Environment
+venv/
+.venv/
+env/
+ENV/
+
+# Dataset (TOO LARGE - don't upload!)
+dataset/
+
+# Model files (optional - they're large, ~20MB)
+model/*.keras
+model/*.h5
+# Keep these small files:
+!model/class_names.json
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*/.ipynb_checkpoints/*
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log
+
+# Environment variables
+.env

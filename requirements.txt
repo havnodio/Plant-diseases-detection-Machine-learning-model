@@ -1,0 +1,9 @@
+tensorflow==2.16.1
+flask
+pillow
+numpy
+scikit-learn
+matplotlib
+seaborn
+opencv-python
+jupyter

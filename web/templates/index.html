@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Plant Disease Detection System</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-green: #2d5016;
+            --secondary-green: #4a7c2c;
+            --accent-green: #6ba83e;
+            --light-bg: #f8f9fa;
+            --white: #ffffff;
+            --border-color: #dee2e6;
+            --text-dark: #212529;
+            --text-muted: #6c757d;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+            background-color: var(--light-bg);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        .navbar {
+            background-color: var(--primary-green);
+            padding: 1rem 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .navbar-brand {
+            color: var(--white) !important;
+            font-size: 1.5rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .navbar-brand i {
+            font-size: 1.8rem;
+        }
+
+        .main-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 1rem;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .page-header h1 {
+            color: var(--primary-green);
+            font-size: 2.25rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+        }
+
+        .page-header p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .detection-card {
+            background: var(--white);
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            border: 1px solid var(--border-color);
+            overflow: hidden;
+        }
+
+        .card-section {
+            padding: 2rem;
+        }
+
+        .section-title {
+            color: var(--primary-green);
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .upload-zone {
+            border: 2px dashed var(--accent-green);
+            border-radius: 8px;
+            padding: 3rem 2rem;
+            text-align: center;
+            background-color: #f8fdf4;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .upload-zone:hover {
+            border-color: var(--secondary-green);
+            background-color: #f0f9e8;
+        }
+
+        .upload-zone.dragover {
+            border-color: var(--secondary-green);
+            background-color: #e8f5d8;
+            transform: scale(1.02);
+        }
+
+        .upload-icon {
+            font-size: 3.5rem;
+            color: var(--accent-green);
+            margin-bottom: 1rem;
+        }
+
+        .upload-zone h5 {
+            color: var(--text-dark);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .upload-zone p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 0;
+        }
+
+        .preview-container {
+            margin-top: 2rem;
+            display: none;
+        }
+
+        .preview-image {
+            width: 100%;
+            max-height: 450px;
+            object-fit: contain;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            background-color: #fafafa;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+            justify-content: center;
+        }
+
+        .btn-analyze {
+            background-color: var(--secondary-green);
+            border: none;
+            color: var(--white);
+            padding: 0.875rem 2.5rem;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-analyze:hover:not(:disabled) {
+            background-color: var(--primary-green);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(45, 80, 22, 0.3);
+        }
+
+        .btn-analyze:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .btn-secondary-action {
+            background-color: var(--white);
+            border: 2px solid var(--border-color);
+            color: var(--text-dark);
+            padding: 0.875rem 2rem;
+            font-size: 1rem;
+            font-weight: 500;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary-action:hover {
+            border-color: var(--accent-green);
+            background-color: #f8fdf4;
+        }
+
+        .loading-container {
+            display: none;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .spinner-border {
+            width: 3rem;
+            height: 3rem;
+            border-width: 0.3rem;
+            color: var(--secondary-green);
+        }
+
+        .loading-text {
+            margin-top: 1rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        .result-container {
+            margin-top: 2rem;
+            display: none;
+        }
+
+        .result-card {
+            background: linear-gradient(135deg, #f8fdf4 0%, #ffffff 100%);
+            border: 2px solid var(--accent-green);
+            border-radius: 12px;
+            padding: 2rem;
+        }
+
+        .result-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        .result-label {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .result-status {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 600;
+        }
+
+        .result-status.high-confidence {
+            background-color: #d4edda;
+            color: #155724;
+        }
+
+        .result-status.medium-confidence {
+            background-color: #fff3cd;
+            color: #856404;
+        }
+
+        .result-status.low-confidence {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+
+        .disease-name {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--primary-green);
+            margin-bottom: 1.5rem;
+            line-height: 1.3;
+        }
+
+        .confidence-section {
+            margin-bottom: 1.5rem;
+        }
+
+        .confidence-label {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .confidence-bar {
+            height: 32px;
+            background-color: #e9ecef;
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .confidence-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--secondary-green), var(--accent-green));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: width 1s ease-out;
+            border-radius: 8px;
+        }
+
+        .result-info {
+            background-color: #e7f3ff;
+            border-left: 4px solid #0066cc;
+            padding: 1rem 1.25rem;
+            border-radius: 4px;
+            margin-top: 1.5rem;
+        }
+
+        .result-info p {
+            margin: 0;
+            color: #004085;
+            font-size: 0.95rem;
+        }
+
+        .features-section {
+            margin-top: 4rem;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .feature-card {
+            text-align: center;
+            padding: 2rem 1.5rem;
+            background: var(--white);
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+            border-color: var(--accent-green);
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--secondary-green), var(--accent-green));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+        }
+
+        .feature-icon i {
+            font-size: 1.75rem;
+            color: var(--white);
+        }
+
+        .feature-card h5 {
+            color: var(--primary-green);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-card p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            .page-header h1 {
+                font-size: 1.75rem;
+            }
+
+            .action-buttons {
+                flex-direction: column;
+            }
+
+            .btn-analyze, .btn-secondary-action {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a class="navbar-brand">
+                <i class="fas fa-leaf"></i>
+                <span>Plant Disease Detection System</span>
+            </a>
+        </div>
+    </nav>
+
+    <div class="main-container">
+        <div class="page-header">
+            <h1>AI-Powered Plant Disease Detection</h1>
+            <p>Upload a clear image of a plant leaf to identify potential diseases with advanced machine learning technology</p>
+        </div>
+
+        <div class="detection-card">
+            <div class="card-section">
+                <div class="section-title">
+                    <i class="fas fa-upload"></i>
+                    Upload Leaf Image
+                </div>
+
+                <div class="upload-zone" id="uploadZone" onclick="document.getElementById('imageInput').click()">
+                    <div class="upload-icon">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                    </div>
+                    <h5>Click to upload or drag and drop</h5>
+                    <p>Supported formats: JPG, PNG, JPEG (Max size: 10MB)</p>
+                    <input type="file" id="imageInput" accept="image/*" style="display: none;">
+                </div>
+
+                <div class="preview-container" id="previewContainer">
+                    <img id="previewImage" class="preview-image" alt="Preview">
+                </div>
+
+                <div class="action-buttons">
+                    <button class="btn-analyze" id="analyzeBtn" disabled>
+                        <i class="fas fa-microscope"></i>
+                        Analyze Image
+                    </button>
+                    <button class="btn-secondary-action" id="clearBtn" style="display: none;" onclick="clearImage()">
+                        <i class="fas fa-times"></i>
+                        Clear
+                    </button>
+                </div>
+
+                <div class="loading-container" id="loadingContainer">
+                    <div class="spinner-border" role="status"></div>
+                    <div class="loading-text">Analyzing plant tissue... This may take a few seconds</div>
+                </div>
+
+                <div class="result-container" id="resultContainer">
+                    <div class="section-title">
+                        <i class="fas fa-clipboard-check"></i>
+                        Detection Results
+                    </div>
+                    <div class="result-card" id="resultCard"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="features-section">
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h5>Instant Analysis</h5>
+                    <p>Get results in seconds with our optimized AI model</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h5>High Accuracy</h5>
+                    <p>95%+ accuracy across 38 different plant diseases</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h5>Comprehensive Database</h5>
+                    <p>Trained on thousands of verified plant disease images</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h5>Multi-Device Support</h5>
+                    <p>Works seamlessly on desktop, tablet, and mobile</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const imageInput = document.getElementById('imageInput');
+        const uploadZone = document.getElementById('uploadZone');
+        const previewContainer = document.getElementById('previewContainer');
+        const previewImage = document.getElementById('previewImage');
+        const analyzeBtn = document.getElementById('analyzeBtn');
+        const clearBtn = document.getElementById('clearBtn');
+        const loadingContainer = document.getElementById('loadingContainer');
+        const resultContainer = document.getElementById('resultContainer');
+
+        // File input change handler
+        imageInput.addEventListener('change', handleImageSelect);
+
+        // Drag and drop handlers
+        uploadZone.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            uploadZone.classList.add('dragover');
+        });
+
+        uploadZone.addEventListener('dragleave', () => {
+            uploadZone.classList.remove('dragover');
+        });
+
+        uploadZone.addEventListener('drop', (e) => {
+            e.preventDefault();
+            uploadZone.classList.remove('dragover');
+            const file = e.dataTransfer.files[0];
+            if (file && file.type.startsWith('image/')) {
+                imageInput.files = e.dataTransfer.files;
+                handleImageSelect();
+            }
+        });
+
+        function handleImageSelect() {
+            const file = imageInput.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = (e) => {
+                    previewImage.src = e.target.result;
+                    previewContainer.style.display = 'block';
+                    analyzeBtn.disabled = false;
+                    clearBtn.style.display = 'inline-block';
+                    resultContainer.style.display = 'none';
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+
+        function clearImage() {
+            imageInput.value = '';
+            previewContainer.style.display = 'none';
+            analyzeBtn.disabled = true;
+            clearBtn.style.display = 'none';
+            resultContainer.style.display = 'none';
+        }
+
+        analyzeBtn.addEventListener('click', async () => {
+            const file = imageInput.files[0];
+            if (!file) return;
+
+            // Show loading
+            loadingContainer.style.display = 'block';
+            resultContainer.style.display = 'none';
+            analyzeBtn.disabled = true;
+
+            const formData = new FormData();
+            formData.append('image', file);
+
+            try {
+                const response = await fetch('http://127.0.0.1:5001/predict', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                const data = await response.json();
+
+                // Hide loading
+                loadingContainer.style.display = 'none';
+                analyzeBtn.disabled = false;
+
+                // Display result
+                displayResult(data);
+
+            } catch (error) {
+                loadingContainer.style.display = 'none';
+                analyzeBtn.disabled = false;
+                alert('Connection error: Unable to reach the analysis server. Please ensure the backend is running.');
+                console.error('Error:', error);
+            }
+        });
+
+        function displayResult(data) {
+            const confidence = Math.round(data.confidence);
+            const disease = data.disease.replace(/___/g, ' - ').replace(/_/g, ' ');
+            
+            let statusClass, statusText, statusIcon, infoMessage;
+            
+            if (confidence >= 90) {
+                statusClass = 'high-confidence';
+                statusText = 'High Confidence';
+                statusIcon = 'fa-check-circle';
+                infoMessage = 'The detection model is highly confident about this diagnosis. The identified disease characteristics strongly match the training data.';
+            } else if (confidence >= 70) {
+                statusClass = 'medium-confidence';
+                statusText = 'Medium Confidence';
+                statusIcon = 'fa-exclamation-circle';
+                infoMessage = 'The model shows moderate confidence. Consider taking additional photos from different angles for verification.';
+            } else {
+                statusClass = 'low-confidence';
+                statusText = 'Low Confidence';
+                statusIcon = 'fa-info-circle';
+                infoMessage = 'Low confidence detection. Please ensure the image is clear, well-lit, and focuses on the affected leaf area. Consider retaking the photo.';
+            }
+
+            const resultHTML = `
+                <div class="result-header">
+                    <span class="result-label">Detected Disease</span>
+                    <span class="result-status ${statusClass}">
+                        <i class="fas ${statusIcon}"></i>
+                        ${statusText}
+                    </span>
+                </div>
+                
+                <div class="disease-name">${disease}</div>
+                
+                <div class="confidence-section">
+                    <div class="confidence-label">
+                        <span>Confidence Level</span>
+                        <span>${confidence}%</span>
+                    </div>
+                    <div class="confidence-bar">
+                        <div class="confidence-fill" style="width: ${confidence}%">
+                            ${confidence}%
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="result-info">
+                    <p><i class="fas fa-info-circle"></i> ${infoMessage}</p>
+                </div>
+            `;
+
+            document.getElementById('resultCard').innerHTML = resultHTML;
+            resultContainer.style.display = 'block';
+            
+            // Smooth scroll to results
+            resultContainer.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+    </script>
+</body>
+</html>
